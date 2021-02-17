@@ -1,3 +1,3 @@
 # dependancyInjecton
 
-test that pull and push work
+test that pull and push work. Of course its works !!!
