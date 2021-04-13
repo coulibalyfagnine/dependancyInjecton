@@ -1,7 +1,10 @@
 package com.alas.dependancyInjecton.controller;
 
+import org.springframework.stereotype.Controller;
+
 import com.alas.dependancyInjecton.services.IGreetingService;
 
+@Controller
 public class ConstructorInjectedController {
 	
 	private final IGreetingService greetingService;
