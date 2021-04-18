@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 
 import com.alas.dependancyInjecton.controller.ConstructorInjectedController;
+import com.alas.dependancyInjecton.controller.I18nController;
 import com.alas.dependancyInjecton.controller.MyController;
 import com.alas.dependancyInjecton.controller.PropertyInjectedController;
 import com.alas.dependancyInjecton.controller.SetterInjectedController;
@@ -17,9 +18,10 @@ public class DependancyInjectonApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(DependancyInjectonApplication.class, args);
 		
+		System.out.println("--------------PRIMARY");
 		MyController myController =(MyController) ctx.getBean("myController");
 		
-		System.out.println(myController.sayHello() );
+		System.out.println(myController.getGreeting() );
 		
 		System.out.println("--------------property");
 		
@@ -34,6 +36,14 @@ public class DependancyInjectonApplication {
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		
 		System.out.println(constructorInjectedController.getGreeting());
+		
+		
+		System.out.println("------------------ Profil: ");
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.getGreeting());
+		
+		
+		
 	}
 
 }
